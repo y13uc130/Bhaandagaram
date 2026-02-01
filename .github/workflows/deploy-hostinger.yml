@@ -2,7 +2,7 @@ name: Deploy to Hostinger
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 concurrency:
   group: hostinger-deploy
@@ -11,7 +11,6 @@ concurrency:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -31,7 +30,10 @@ jobs:
       - name: Add .htaccess for SPA + redirects
         run: cp public/.htaccess dist/.htaccess
 
-      # Upload ONLY dist/ to public_html/
+      - name: Add deploy marker
+        run: |
+          echo "Deployed at $(date -u) | commit $(git rev-parse --short HEAD)" > dist/deploy.txt
+
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -40,5 +42,6 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/
-          server-dir: /public_html/
+          server-dir: public_html/
           dangerous-clean-slate: true
+          log-level: verbose
