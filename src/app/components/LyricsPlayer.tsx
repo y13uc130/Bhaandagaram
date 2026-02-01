@@ -96,7 +96,7 @@ export function LyricsPlayer({ song, onBack }: LyricsPlayerProps) {
 
       {/* Lyrics Section */}
       <div
-        className={`flex-1 overflow-auto px-6 py-8 pt-28 ${
+        className={`flex-1 overflow-auto px-6 py-8 pt-38 ${
           hasYouTube ? 'pb-56' : 'pb-40'
         }`}
       >
