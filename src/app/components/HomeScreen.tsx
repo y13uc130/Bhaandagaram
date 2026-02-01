@@ -120,7 +120,7 @@ export function HomeScreen({ onEnter }: HomeScreenProps) {
           >
             Bhagavadh Ramanuja
             <br />
-            Sankeerthaana Bhandaagaaram
+            Sankeerthana Bhaandagaram
           </motion.h1>
 
           {/* Animation Container - Akshayapaathra */}
