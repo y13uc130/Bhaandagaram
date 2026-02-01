@@ -96,15 +96,15 @@ export function LyricsPlayer({ song, onBack }: LyricsPlayerProps) {
 
       {/* Lyrics Section */}
       <div
-        className={`flex-1 overflow-auto px-6 py-8 pt-24 ${
+        className={`flex-1 overflow-auto px-6 py-8 pt-28 ${
           hasYouTube ? 'pb-56' : 'pb-40'
         }`}
       >
         <div className="max-w-2xl mx-auto">
           {/* Song Info */}
           <div className="text-center mb-8">
-            <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-amber-600 to-rose-600 flex items-center justify-center shadow-lg">
-              <div className="w-28 h-28 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+            <div className="w-28 h-28 mx-auto mb-4 rounded-full bg-gradient-to-br from-amber-600 to-rose-600 flex items-center justify-center shadow-lg">
+              <div className="w-24 h-24 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
                 <Play className="w-12 h-12 text-white" />
               </div>
             </div>

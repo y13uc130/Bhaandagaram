@@ -40,23 +40,29 @@ export function SongList({ onSongSelect, onBack }: SongListProps) {
   return (
     <div className="h-full flex flex-col bg-gradient-to-br from-amber-50 via-rose-50 to-amber-50">
       {/* Header */}
-      <div className="bg-white/80 backdrop-blur-sm px-6 py-6 rounded-b-3xl shadow-sm">
+      <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-sm px-2 py-6 rounded-b-3xl shadow-sm">
         <div className="mb-4">
-          <button
+          {/* <button
             onClick={onBack}
             className="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
           >
             <ChevronLeft className="w-4 h-4" />
             Back
-          </button>
+          </button> */}
         </div>
         <div className="flex items-center gap-3 mb-4">
+        <button
+            onClick={onBack}
+            className="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
           <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-600 to-rose-600 flex items-center justify-center">
             <Music className="w-7 h-7 text-white" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">Divine Songs</h1>
-            <p className="text-sm text-gray-600">The Sacred Treasury of Divine Songs</p>
+            <h1 className="text-2xl font-bold text-gray-900">Ramanuja Sankeerthanalu</h1>
+            <p className="text-sm text-gray-600">The Sacred Treasury</p>
           </div>
         </div>
         <SearchFilters

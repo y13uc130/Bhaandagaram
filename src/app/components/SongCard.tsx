@@ -18,8 +18,14 @@ export function SongCard({ song, onClick }: SongCardProps) {
         </div>
         <div className="flex-1 min-w-0">
           <h3 className="font-semibold text-gray-900 truncate">{song.title}</h3>
-          <p className="text-sm text-gray-600 truncate">{song.singer}</p>
-          <p className="text-xs text-gray-500 truncate">Lyricist: {song.lyricist}</p>
+          {song.singer ? <p className="text-sm text-gray-600 truncate">{song.singer}</p> : null}
+          {song.lyricist || song.music ? (
+            <p className="text-xs text-gray-500 truncate">
+              {[song.lyricist ? `Lyricist: ${song.lyricist}` : null, song.music ? `Music: ${song.music}` : null]
+                .filter(Boolean)
+                .join(' | ')}
+            </p>
+          ) : null}
         </div>
       </div>
     </div>
